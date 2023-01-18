@@ -27,3 +27,55 @@ html, body {
     min-height: 100vh;
     background-color: var(--dark-background);
 }
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+/* header section */
+header {
+    width: 100%;
+    background-color: var(--dark-elements);
+}
+
+header .content {
+    display: flex;
+    padding: 1rem 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .content .title {
+    margin: 0.5rem 0;
+}
+
+header .content .title h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--light-elements)
+}
+
+header .content .change-theme {
+    margin: 0.5rem 0;
+}
+
+header .content .change-theme button{
+    background-color: var(--dark-elements);
+    border: none;
+}
+
+header .content .change-theme button span {
+    color: var(--light-elements);
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+header .content .change-theme button i {
+    color: var(--light-elements);
+    margin-right: 0.3rem;
+    transform: rotateZ(-20deg);
+}
+/*End header section */
