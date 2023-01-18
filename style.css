@@ -61,7 +61,7 @@ header .content .change-theme {
     margin: 0.5rem 0;
 }
 
-header .content .change-theme button{
+header .content .change-theme button {
     background-color: var(--dark-elements);
     border: none;
 }
@@ -78,4 +78,105 @@ header .content .change-theme button i {
     margin-right: 0.3rem;
     transform: rotateZ(-20deg);
 }
+
 /*End header section */
+
+/* Main => filter section */
+main {
+    width: 100%;
+}
+
+main .filter {
+    width: 100%;
+}
+
+main .filter .content {
+    display: flex;
+    padding: 3rem 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .filter .content .search-field-area {
+    width: 35%;
+    display: flex;
+    background-color: var(--dark-elements);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+}
+
+main .filter .content .search-field-area button {
+    background-color: transparent;
+    border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+main .filter .content .search-field-area button i {
+    color: var(--light-elements);
+    font-size: 18px;
+}
+
+main .filter .content .search-field-area input {
+    width: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--light-elements);
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+main .filter .content .select-continent-area {
+    position: relative;
+    width: 20%;
+    background-color: var(--dark-elements);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+}
+
+main .filter .content .select-continent-area button{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+main .filter .content .select-continent-area button span{
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--light-elements);
+}
+
+main .filter .content .select-continent-area button i{
+    color: var(--light-elements);
+}
+
+main .filter .content .select-continent-area .continent-list {
+    display: none;
+    position: absolute;
+    top: calc(2rem + 23px);
+    left: 0;
+    width: 100%;
+    list-style-type: none;
+    background-color: var(--dark-elements);
+    border-radius: 8px;   
+}
+
+main .filter .content .select-continent-area .open {
+    display: block;
+}
+
+main .filter .content .select-continent-area .continent-list .continent-option {
+    color: var(--light-elements);
+    font-size: 14px;
+    padding: 1rem 1.5rem;
+    transition: none;
+}
+
+main .filter .content .select-continent-area .continent-list .continent-option:hover {
+    background-color: var(--dark-background);
+    cursor: pointer;
+}
+/* Main => end filter section */
