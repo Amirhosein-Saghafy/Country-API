@@ -5,6 +5,8 @@ const continentListIcon = continentListButton.querySelector('i');
 const continentList = document.querySelector('.continent-list');
 const selectedContinent = document.getElementById('selected-continent');
 const dataContainer = document.querySelector('.data .content');
+const searchButton = document.querySelector('.search-field-area button');
+const searchField = document.querySelector('.search-field-area input');
 let countriesData = null;
 let countriesFlags = null;
 
@@ -69,6 +71,17 @@ const arrangeData = (data) => {
     });
 }
 
+const filter = () => {
+
+    let filteredData = countriesData.filter((value) => value.name.toLowerCase().startsWith(searchField.value.toLowerCase()) || value.capital?.toLowerCase().startsWith(searchField.value.toLowerCase()));
+
+    if (selectedContinent.textContent !== 'Filter by Region' && selectedContinent.textContent !== 'All') {
+        filteredData = filteredData.filter((value) => value.region === selectedContinent.textContent);
+    }
+
+    arrangeData(filteredData);
+}
+
 sendRequest();
 
 continentListButton.addEventListener('click', (e) => {
@@ -77,8 +90,10 @@ continentListButton.addEventListener('click', (e) => {
 
     if (continentList.classList.contains('open')) {
 
-        if (e.target.classList.contains('continent-option'))
+        if (e.target.classList.contains('continent-option')) {
             selectedContinent.innerHTML = e.target.innerText;
+            filter();
+        }
 
         closeContinentList();
     }
@@ -92,4 +107,8 @@ document.addEventListener('click', (e) => {
     if (continentList.classList.contains('open')) {
         closeContinentList();
     }
+});
+
+searchButton.addEventListener('click', (e) => {
+    filter();
 });
