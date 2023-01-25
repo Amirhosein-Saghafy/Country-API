@@ -210,11 +210,11 @@ main .data .content .item .flag {
 }
 
 main .data .content .item .flag img {
-     width: 100%;
-     height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
-main .data .content .item > .name {
+main .data .content .item>.name {
     width: 100%;
     padding: 1rem 1rem 0 1rem;
 }
@@ -249,3 +249,104 @@ main .data .item .details .detail-field .value {
 }
 
 /* Main => End data section */
+
+/* ***************************** specify country page styels ***************************** */
+
+main .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .content .back-area {
+    width: 100%;
+    margin: 3rem 0;
+}
+
+main .content .back-area button {
+    border-radius: 4px;
+    padding: 0.4rem 1.5rem;
+    background-color: var(--dark-elements);
+    border: none;
+    color: var(--light-input);
+    cursor: pointer;
+}
+
+main .content .back-area button i {
+    color: var(--light-elements);
+    margin-right: 0.5rem;
+}
+
+main .country-flag {
+    width: 35%;
+    height: 300px;
+}
+
+main .country-flag img {
+    width: 100%;
+    height: 100%;
+}
+
+main .country-detail {
+    width: 55%;
+}
+
+main .country-detail .country-name {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+main .country-detail .country-name h3 {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--light-elements);
+}
+
+main .country-detail .country-information {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+main .country-detail .country-information .field {
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
+main .country-detail .country-information .field .name {
+    font-size: 14px;
+    text-transform: capitalize;
+    color: var(--light-elements);
+}
+
+main .country-detail .country-information .field .value {
+    font-size: 14px;
+    text-transform: capitalize;
+    color: var(--light-input);
+}
+
+main .borders {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+main .borders span {
+    font-size: 14px;
+    display: inline-block;
+    text-transform: capitalize;
+    color: var(--light-elements);
+    margin-right: 0.75rem;
+}
+
+main .borders .border {
+    padding: 0.4rem 1.5rem;
+    margin-right: 0.75rem;
+    background-color: var(--dark-elements);
+    color: var(--light-input);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
