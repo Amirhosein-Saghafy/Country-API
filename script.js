@@ -1,9 +1,12 @@
 'user strict';
 
-const continentListButton = document.querySelector('.select-continent-area button');
+const continentListButton = document.querySelector('.select-continent-area');
 const continentListIcon = continentListButton.querySelector('i');
 const continentList = document.querySelector('.continent-list');
 const selectedContinent = document.getElementById('selected-continent');
+const dataContainer = document.querySelector('.data .content');
+let countriesData = null;
+let countriesFlags = null;
 
 const openContinentList = () => {
     continentList.classList.add('open');
@@ -15,19 +18,78 @@ const closeContinentList = () => {
     continentListIcon.style.transform = 'rotateZ(0deg)';
 }
 
-continentListButton.addEventListener('click', openContinentList);
+const sendRequest = () => {
+
+    fetch('all.json').then((response) => response.json()).then((data) => {
+        countriesData = data;
+        arrangeData(countriesData);
+    });
+}
+
+const arrangeData = (data) => {
+
+    dataContainer.innerHTML = '';
+
+    let alpha2Code = null;
+
+    data.forEach((value, index) => {
+
+        alpha2Code = value.alpha2Code.toLowerCase();
+
+        if (alpha2Code === 'ata' || alpha2Code === 'unk' || alpha2Code === 'esh') {
+            data.splice(index, 1);
+            return;
+        }
+
+        let dataItem = `
+        <div class="item">
+            <div class="flag">
+                <img src="images/${alpha2Code}.png" alt="${value.name} flag">
+            </div>
+        <div class="name">
+            <h3>${value.name}</h3>
+        </div>
+        <div class="details">
+            <div class="detail-field" id="population">
+                <span class="name">population :</span>
+                <span class="value">${value.population}</span>
+            </div>
+            <div class="detail-field" id="region">
+                <span class="name">region :</span>
+                <span class="value">${value.region}</span>
+            </div>
+            <div class="detail-field" id="capital">
+                <span class="name">capital :</span>
+                <span class="value">${value.capital}</span>
+            </div>
+        </div>
+    </div>`;
+
+        dataContainer.innerHTML += dataItem;
+    });
+}
+
+sendRequest();
+
+continentListButton.addEventListener('click', (e) => {
+
+    e.stopPropagation();
+
+    if (continentList.classList.contains('open')) {
+
+        if (e.target.classList.contains('continent-option'))
+            selectedContinent.innerHTML = e.target.innerText;
+
+        closeContinentList();
+    }
+    else {
+        openContinentList();
+    }
+});
 
 document.addEventListener('click', (e) => {
 
     if (continentList.classList.contains('open')) {
-
-        if (e.target.closest('.continent-list')) {
-
-            selectedContinent.innerHTML = e.target.innerText;
-        }
-        else if (e.target.closest('.select-continent-area')) {
-            return;
-        }
         closeContinentList();
     }
 });

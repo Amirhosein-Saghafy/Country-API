@@ -134,7 +134,7 @@ main .filter .content .select-continent-area {
     border-radius: 8px;
 }
 
-main .filter .content .select-continent-area button{
+main .filter .content .select-continent-area button {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -144,12 +144,12 @@ main .filter .content .select-continent-area button{
     cursor: pointer;
 }
 
-main .filter .content .select-continent-area button span{
+main .filter .content .select-continent-area button span {
     font-family: 'Nunito Sans', sans-serif;
     color: var(--light-elements);
 }
 
-main .filter .content .select-continent-area button i{
+main .filter .content .select-continent-area button i {
     color: var(--light-elements);
 }
 
@@ -161,7 +161,7 @@ main .filter .content .select-continent-area .continent-list {
     width: 100%;
     list-style-type: none;
     background-color: var(--dark-elements);
-    border-radius: 8px;   
+    border-radius: 8px;
 }
 
 main .filter .content .select-continent-area .open {
@@ -179,4 +179,73 @@ main .filter .content .select-continent-area .continent-list .continent-option:h
     background-color: var(--dark-background);
     cursor: pointer;
 }
+
 /* Main => end filter section */
+
+/* Main => data section */
+main .data {
+    width: 100%;
+}
+
+main .data .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+main .data .content .item {
+    width: 22.5%;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--dark-elements);
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+}
+
+main .data .content .item .flag {
+    width: 100%;
+    height: 175px;
+}
+
+main .data .content .item .flag img {
+     width: 100%;
+     height: 100%;
+}
+
+main .data .content .item > .name {
+    width: 100%;
+    padding: 1rem 1rem 0 1rem;
+}
+
+main .data .content .item .name h3 {
+    color: var(--light-elements);
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+main .data .content .item .details {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+main .data .content .item .details .detail-field {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+main .data .item .details .detail-field .name {
+    text-transform: capitalize;
+    color: var(--light-elements);
+    font-size: 16px;
+}
+
+main .data .item .details .detail-field .value {
+    text-transform: capitalize;
+    color: var(--light-input);
+    font-size: 14px;
+}
+
+/* Main => End data section */
