@@ -8,7 +8,6 @@ const dataContainer = document.querySelector('.data .content');
 const searchButton = document.querySelector('.search-field-area button');
 const searchField = document.querySelector('.search-field-area input');
 let countriesData = null;
-let countriesFlags = null;
 
 const openContinentList = () => {
     continentList.classList.add('open');
@@ -44,10 +43,10 @@ const arrangeData = (data) => {
         }
 
         let dataItem = `
-        <div class="item">
-            <div class="flag">
-                <img src="images/${alpha2Code}.png" alt="${value.name} flag">
-            </div>
+    <a class="item" href="specified.html?${value.alpha2Code}">
+        <div class="flag">
+            <img src="images/${alpha2Code}.png" alt="${value.name} flag">
+        </div>
         <div class="name">
             <h3>${value.name}</h3>
         </div>
@@ -65,7 +64,7 @@ const arrangeData = (data) => {
                 <span class="value">${value.capital}</span>
             </div>
         </div>
-    </div>`;
+    </a>`;
 
         dataContainer.innerHTML += dataItem;
     });
