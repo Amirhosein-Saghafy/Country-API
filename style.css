@@ -21,11 +21,13 @@
 
 html, body {
     font-family: 'Nunito Sans', sans-serif;
-    max-width: 5000px;
-    max-height: 5000px;
     min-width: 100vw;
     min-height: 100vh;
     background-color: var(--dark-background);
+}
+
+body.light{
+    background-color: var(--light-background);
 }
 
 .container {
@@ -64,6 +66,7 @@ header .content .change-theme {
 header .content .change-theme button {
     background-color: var(--dark-elements);
     border: none;
+    cursor: pointer;
 }
 
 header .content .change-theme button span {
@@ -77,6 +80,27 @@ header .content .change-theme button i {
     color: var(--light-elements);
     margin-right: 0.3rem;
     transform: rotateZ(-20deg);
+}
+
+header.light {
+    background-color: var(--light-background);
+    box-shadow: 0px 2px 5px 0px rgb(231, 231, 231);
+}
+
+header.light .content .title h3{
+    color: var(--dark-text);
+}
+
+header.light .content .change-theme button {
+    background-color: var(--light-elements);
+}
+
+header.light .content .change-theme button span {
+    color: var(--dark-elements); 
+}
+
+header.light .content .change-theme button i {
+    color: var(--dark-elements);
 }
 
 /*End header section */
@@ -180,6 +204,44 @@ main .filter .content .select-continent-area .continent-list .continent-option:h
     cursor: pointer;
 }
 
+main.light .filter .content .search-field-area {
+    background-color: var(--light-elements);
+    box-shadow: 2px 2px 5px 0px rgb(231, 231, 231), -2px -2px 5px 0px rgb(231, 231, 231);
+}
+
+main.light .filter .content .search-field-area button i {
+    color: var(--dark-elements);
+}
+
+main.light .filter .content .search-field-area input {
+    color: var(--dark-elements);
+}
+
+main.light .filter .content .select-continent-area {
+    background-color: var(--light-elements);
+    box-shadow: 2px 2px 5px 0px rgb(231, 231, 231), -2px -2px 5px 0px rgb(231, 231, 231);
+}
+
+main.light .filter .content .select-continent-area button span {
+    color: var(--dark-elements);
+}
+
+main.light .filter .content .select-continent-area button i {
+    color: var(--dark-elements);
+}
+
+main.light .filter .content .select-continent-area .continent-list {
+    background-color: var(--light-elements);
+}
+
+main.light .filter .content .select-continent-area .continent-list .continent-option {
+    color: var(--dark-elements);
+}
+
+main.light .filter .content .select-continent-area .continent-list .continent-option:hover {
+    background-color: var(--light-background);
+}
+
 /* Main => end filter section */
 
 /* Main => data section */
@@ -248,6 +310,23 @@ main .data .item .details .detail-field .value {
     text-transform: capitalize;
     color: var(--light-input);
     font-size: 14px;
+}
+
+main.light .data .content .item {
+    background-color: var(--light-elements);
+    box-shadow: 2px 2px 5px 0px rgb(231, 231, 231), -2px -2px 5px 0px rgb(231, 231, 231);
+}
+
+main.light .data .content .item .name h3 {
+    color: var(--dark-elements);
+}
+
+main.light .data .item .details .detail-field .name {
+    color: var(--dark-elements);
+}
+
+main.light .data .item .details .detail-field .value {
+    color: var(--dark-input);
 }
 
 /* Main => End data section */
@@ -360,4 +439,36 @@ main .borders .border{
 
 main .borders span {
     color: var(--light-elements);
+}
+
+main.light .content .back-area a {
+    background-color: var(--light-elements);
+    color: var(--dark-input);
+    box-shadow: 2px 2px 5px 0px rgb(231, 231, 231), -2px -2px 5px 0px rgb(231, 231, 231);
+}
+
+main.light .content .back-area a i {
+    color: var(--dark-elements);
+}
+
+main.light .country-detail .country-name h3 {
+    color: var(--dark-elements);
+}
+
+main.light .country-detail .country-information .field .name {
+    color: var(--dark-elements);
+}
+
+main.light .borders span {
+    color: var(--dark-elements);
+}
+
+main.light .borders .border{
+    background-color: var(--light-elements);
+    color: var(--dark-input);
+    box-shadow: 2px 2px 5px 0px rgb(231, 231, 231), -2px -2px 5px 0px rgb(231, 231, 231);
+}
+
+main.light .borders span {
+    color: var(--dark-elements);
 }

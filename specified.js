@@ -1,6 +1,10 @@
 'use strict';
 
+const body = document.getElementsByTagName('body')[0];
+const main = document.getElementsByTagName('main')[0];
+const header = document.getElementsByTagName('header')[0];
 const dataContainer = document.querySelector('main .content');
+const changeTheme = document.querySelector('.change-theme button');
 let countriesData;
 let key = location.search.substring(1);
 
@@ -90,3 +94,25 @@ const arrangeData = (data) => {
 }
 
 sendRequest();
+
+changeTheme.addEventListener('click', (e) => {
+    if(body.classList.contains('light'))
+    {
+        body.classList.remove('light');
+        main.classList.remove('light');
+        header.classList.remove('light');
+
+        changeTheme.querySelector('button').innerHTML = 'light mode';
+        changeTheme.querySelector('i').classList.remove('fa-moon');
+        changeTheme.querySelector('i').classList.add('fa-sun');
+    }
+    else{
+        body.classList.add('light');
+        main.classList.add('light');
+        header.classList.add('light');
+
+        changeTheme.querySelector('button').innerHTML = 'dark mode';
+        changeTheme.querySelector('i').classList.remove('fa-sun');
+        changeTheme.querySelector('i').classList.add('fa-moon');
+    }
+});
