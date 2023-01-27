@@ -1,8 +1,8 @@
 'user strict';
 
-const body = document.getElementsByTagName('body')[0];
-const main = document.getElementsByTagName('main')[0];
-const header = document.getElementsByTagName('header')[0];
+const body = document.querySelector('body');
+const main = document.querySelector('main');
+const header = document.querySelector('header');
 const continentListButton = document.querySelector('.select-continent-area');
 const continentListIcon = continentListButton.querySelector('i');
 const continentList = document.querySelector('.continent-list');
