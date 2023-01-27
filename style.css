@@ -20,13 +20,12 @@
 }
 
 html, body {
-    font-family: 'Nunito Sans', sans-serif;
-    min-width: 100vw;
     min-height: 100vh;
+    font-family: 'Nunito Sans', sans-serif;
     background-color: var(--dark-background);
 }
 
-body.light{
+body.light {
     background-color: var(--light-background);
 }
 
@@ -87,7 +86,7 @@ header.light {
     box-shadow: 0px 2px 5px 0px rgb(231, 231, 231);
 }
 
-header.light .content .title h3{
+header.light .content .title h3 {
     color: var(--dark-text);
 }
 
@@ -96,7 +95,7 @@ header.light .content .change-theme button {
 }
 
 header.light .content .change-theme button span {
-    color: var(--dark-elements); 
+    color: var(--dark-elements);
 }
 
 header.light .content .change-theme button i {
@@ -251,21 +250,24 @@ main .data {
 
 main .data .content {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 
 main .data .content .item {
-    display: inline-block;
     width: 22.5%;
-    max-height: 400px;
+    max-height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--dark-elements);
     border-radius: 8px;
     margin-bottom: 2.5rem;
+    margin-right: calc(10% / 3);
     text-decoration: none;
+}
+
+main .data .content .item:nth-child(4n) {
+    margin-right: 0;
 }
 
 main .data .content .item .flag {
@@ -333,19 +335,19 @@ main.light .data .item .details .detail-field .value {
 
 /* ***************************** specify country page styels ***************************** */
 
-main .content {
+#specify-country .content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
 
-main .content .back-area {
+#specify-country .content .back-area {
     width: 100%;
     margin: 3rem 0;
 }
 
-main .content .back-area a {
+#specify-country .content .back-area a {
     display: inline-block;
     border-radius: 4px;
     padding: 0.4rem 1.5rem;
@@ -356,56 +358,56 @@ main .content .back-area a {
     text-decoration: none;
 }
 
-main .content .back-area a i {
+#specify-country .content .back-area a i {
     color: var(--light-elements);
     margin-right: 0.5rem;
 }
 
-main .country-flag {
+#specify-country .country-flag {
     width: 35%;
     height: 300px;
 }
 
-main .country-flag img {
+#specify-country .country-flag img {
     width: 100%;
     height: 100%;
 }
 
-main .country-detail {
+#specify-country .country-detail {
     width: 55%;
 }
 
-main .country-detail .country-name {
+#specify-country .country-detail .country-name {
     width: 100%;
     margin-bottom: 1rem;
 }
 
-main .country-detail .country-name h3 {
+#specify-country .country-detail .country-name h3 {
     font-size: 22px;
     font-weight: 600;
     text-transform: capitalize;
     color: var(--light-elements);
 }
 
-main .country-detail .country-information {
+#specify-country .country-detail .country-information {
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-main .country-detail .country-information .field {
+#specify-country .country-detail .country-information .field {
     width: 50%;
     margin-bottom: 1rem;
 }
 
-main .country-detail .country-information .field .name {
+#specify-country .country-detail .country-information .field .name {
     font-size: 14px;
     text-transform: capitalize;
     color: var(--light-elements);
 }
 
-main .country-detail .country-information .field .value {
+#specify-country .country-detail .country-information .field .value {
     display: inline-block;
     font-size: 14px;
     text-transform: capitalize;
@@ -413,12 +415,12 @@ main .country-detail .country-information .field .value {
     margin-right: 0.5rem;
 }
 
-main .borders {
+#specify-country .borders {
     margin-top: 2rem;
     width: 100%;
 }
 
-main .borders span {
+#specify-country .borders span {
     font-size: 14px;
     display: inline-block;
     text-transform: capitalize;
@@ -426,10 +428,11 @@ main .borders span {
     margin-right: 0.75rem;
 }
 
-main .borders .border{
+#specify-country .borders .border {
     display: inline-block;
     padding: 0.4rem 1.5rem;
     margin-right: 0.75rem;
+    margin-bottom: 0.75rem;
     background-color: var(--dark-elements);
     color: var(--light-input);
     border-radius: 4px;
@@ -437,38 +440,34 @@ main .borders .border{
     text-decoration: none;
 }
 
-main .borders span {
-    color: var(--light-elements);
-}
-
-main.light .content .back-area a {
+#specify-country.light .content .back-area a {
     background-color: var(--light-elements);
     color: var(--dark-input);
     box-shadow: 2px 2px 5px 0px rgb(231, 231, 231), -2px -2px 5px 0px rgb(231, 231, 231);
 }
 
-main.light .content .back-area a i {
+#specify-country.light .content .back-area a i {
     color: var(--dark-elements);
 }
 
-main.light .country-detail .country-name h3 {
+#specify-country.light .country-detail .country-name h3 {
     color: var(--dark-elements);
 }
 
-main.light .country-detail .country-information .field .name {
+#specify-country.light .country-detail .country-information .field .name {
     color: var(--dark-elements);
 }
 
-main.light .borders span {
+#specify-country.light .borders span {
     color: var(--dark-elements);
 }
 
-main.light .borders .border{
+#specify-country.light .borders .border {
     background-color: var(--light-elements);
     color: var(--dark-input);
     box-shadow: 2px 2px 5px 0px rgb(231, 231, 231), -2px -2px 5px 0px rgb(231, 231, 231);
 }
 
-main.light .borders span {
+#specify-country.light .borders span {
     color: var(--dark-elements);
 }

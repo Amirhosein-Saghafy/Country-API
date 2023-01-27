@@ -1,12 +1,13 @@
 'use strict';
 
-const body = document.getElementsByTagName('body')[0];
-const main = document.getElementsByTagName('main')[0];
-const header = document.getElementsByTagName('header')[0];
-const dataContainer = document.querySelector('main .content');
-const changeTheme = document.querySelector('.change-theme button');
-let countriesData;
-let key = location.search.substring(1);
+const body = document.getElementsByTagName('body')[0],
+    main = document.getElementsByTagName('main')[0],
+    header = document.getElementsByTagName('header')[0],
+    dataContainer = document.querySelector('main .content'),
+    changeTheme = document.querySelector('.change-theme button');
+
+let countriesData,
+    key = location.search.substring(1);
 
 const sendRequest = () => {
 
@@ -22,23 +23,27 @@ const arrangeData = (data) => {
         languages = '',
         borders = '';
 
-    for (const currency of data.currencies) {
+    if (data.currencies) {
+        for (const currency of data.currencies) {
 
-        currencies += `<span class="value">${currency.code} ${currency.symbol}</span>`;
+            currencies += `<span class="value">${currency.code} ${currency.symbol}</span>`;
+        }
     }
+    else
+        currencies += `<span class="value">None</span>`
 
     for (const language of data.languages) {
 
         languages += `<span class="value">${language.name}</span>`;
     }
 
-    if (data?.borders) {
+    if (data.borders) {
         for (const border of data.borders) {
 
             borders += `<a href="specified.html?${border}" class="border">${border}</a>`;
         }
     }
-    else{
+    else {
         borders = '<span>None</span>';
     }
 
@@ -53,15 +58,15 @@ const arrangeData = (data) => {
         <div class="country-information">
             <div class="field" id="native-name">
                 <span class="name">native name:</span>
-                <span class="value">${data.nativeName}</span>
+                <span class="value">${data.nativeName || 'None'}</span>
             </div>
             <div class="field" id="top-level-domain">
                 <span class="name">top level domain:</span>
-                <span class="value">${data.topLevelDomain}</span>
+                <span class="value">${data.topLevelDomain || 'None'}</span>
             </div>
             <div class="field" id="population">
                 <span class="name">population:</span>
-                <span class="value">${data.population}</span>
+                <span class="value">${data.population || 'None'}</span>
             </div>
             <div class="field" id="currencies">
                 <span class="name">currencies:</span>
@@ -69,7 +74,7 @@ const arrangeData = (data) => {
             </div>
             <div class="field" id="region">
                 <span class="name">region:</span>
-                <span class="value">${data.region}</span>
+                <span class="value">${data.region || 'None'}</span>
             </div>
             <div class="field" id="languages">
                 <span class="name">languages:</span>
@@ -77,11 +82,11 @@ const arrangeData = (data) => {
             </div>
             <div class="field" id="sub-region">
                 <span class="name">sub region:</span>
-                <span class="value">${data.subRegion}</span>
+                <span class="value">${data.subRegion || 'None'}</span>
             </div>
             <div class="field" id="capital">
                 <span class="name">capital:</span>
-                <span class="value">${data.capital}</span>
+                <span class="value">${data.capital || 'None'}</span>
             </div>
             <div class="borders">
                 <span>borders:</span>
@@ -96,22 +101,21 @@ const arrangeData = (data) => {
 sendRequest();
 
 changeTheme.addEventListener('click', (e) => {
-    if(body.classList.contains('light'))
-    {
+    if (body.classList.contains('light')) {
         body.classList.remove('light');
         main.classList.remove('light');
         header.classList.remove('light');
 
-        changeTheme.querySelector('button').innerHTML = 'light mode';
+        changeTheme.querySelector('span').innerHTML = 'light mode';
         changeTheme.querySelector('i').classList.remove('fa-moon');
         changeTheme.querySelector('i').classList.add('fa-sun');
     }
-    else{
+    else {
         body.classList.add('light');
         main.classList.add('light');
         header.classList.add('light');
 
-        changeTheme.querySelector('button').innerHTML = 'dark mode';
+        changeTheme.querySelector('span').innerHTML = 'dark mode';
         changeTheme.querySelector('i').classList.remove('fa-sun');
         changeTheme.querySelector('i').classList.add('fa-moon');
     }
