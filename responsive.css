@@ -1,0 +1,162 @@
+@media only screen and (max-width: 1200px){
+    .container{
+        width: 962px;
+    }
+
+    main .data .content .item{
+        width: 30%;
+        margin-right: calc(10% / 2);
+    }
+
+    main .data .content .item:nth-child(4n){
+        margin-right: calc(10% / 2);
+    }
+
+    main .data .content .item:nth-child(3n)
+    {
+        margin-right: 0;
+    }
+
+    main .filter .content .select-continent-area{
+        width: 25%;
+    }
+
+    #specify-country .country-flag{
+        height: 250px;
+    }
+}
+@media only screen and (max-width: 992px){
+    .container{
+        width: 738px;
+    }
+
+    main .data .content .item{
+        width: 45%;
+        margin-right: 10%;
+    }
+
+    main .data .content .item:nth-child(4n),
+    main .data .content .item:nth-child(3n){
+        margin-right: 10%;
+    }
+
+    main .data .content .item:nth-child(2n)
+    {
+        margin-right: 0;
+    }
+
+    main .filter .content .select-continent-area{
+        width: 30%;
+    }
+
+    #specify-country .country-flag{
+        width: 40%;
+        height: 200px;
+    }
+
+    #specify-country .country-detail{
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 768px){
+    .container{
+        width: 550px;
+    }
+
+    main .filter .content{
+        flex-wrap: wrap;
+    }
+
+    main .filter .content .search-field-area{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    main .filter .content .select-continent-area{
+        width: 50%;
+    }
+
+    main .data .content{
+        justify-content: center;
+    }
+
+    main .data .content .item{
+        width: 80%;
+        margin-right: 0 !important;
+    }   
+
+    main .data .content .item .flag{
+        height: auto;
+    }
+
+    main .data .content .item>.name{
+        padding: 2rem 2rem 0 2rem;
+    }
+
+    main .data .content .item .details{
+        padding: 2rem;
+    }
+
+    #specify-country .country-flag{
+        width: 100%;
+        height: auto;
+    }
+
+    #specify-country .country-detail{
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    #specify-country .country-detail .country-name h3{
+        margin-bottom: 2rem;
+    }
+}
+@media only screen and (max-width: 575px){
+    .container{
+        width: 100%;
+    }
+
+    main .data .content .item .flag{
+        height: auto;
+    }
+
+    #specify-country .country-flag{
+        width: 100%;
+        height: auto;
+    }
+
+    #specify-country .country-detail{
+        width: 100%;
+        margin-top: 0;
+        padding: 2rem;
+    }
+
+    #specify-country .country-detail .country-name h3{
+        margin-bottom: 2rem;
+    }
+
+    #specify-country .country-detail .country-information .field{
+        width: 100%;
+    }
+
+    #specify-country .country-detail .country-information .field:nth-child(4n){
+        margin-bottom: 2rem;
+    }
+}
+@media only screen and (max-width: 350px){
+    header .content .title h3{
+        font-size: 18px;
+    }
+    main .filter .content .select-continent-area{
+        width: 75%;
+    }
+    main .data .content .item{
+        width: 100%;
+    } 
+    main .data .content .item>.name{
+        padding: 1rem 1rem 0 1rem;
+    }
+    main .data .content .item .details{
+        padding: 1rem;
+    }
+}
