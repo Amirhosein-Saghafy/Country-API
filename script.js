@@ -55,15 +55,15 @@ const arrangeData = (data) => {
             <h3>${value.name}</h3>
         </div>
         <div class="details">
-            <div class="detail-field" id="population">
+            <div class="detail-field">
                 <span class="name">population :</span>
                 <span class="value">${value.population}</span>
             </div>
-            <div class="detail-field" id="region">
+            <div class="detail-field">
                 <span class="name">region :</span>
                 <span class="value">${value.region}</span>
             </div>
-            <div class="detail-field" id="capital">
+            <div class="detail-field">
                 <span class="name">capital :</span>
                 <span class="value">${value.capital}</span>
             </div>
